@@ -105,7 +105,7 @@ $("#rightarrowproject").on("click", function () {
 // projects arrow click to change slideshow
 $(document).ready(function() {
     var slideshow;
-    slideshow = $('#slideshow').wipe();
+    slideshow = $('#slideshowProjects').wipe();
     slideshow.pause();
 
     $('#leftarrowproject').click(function(event) {
@@ -123,3 +123,75 @@ $(document).ready(function() {
     });
 });
 
+
+
+//CLUBSSSS
+var clickCountClubs = 0;
+var totalClubsNum = 4;
+//clicking on left arrow in clubs page
+$("#leftarrowclub").on("click", function () {
+    clickCountClubs --;
+
+    //if the number is negative
+    if (clickCountClubs % totalClubsNum < 0) {
+        clickCountClubs = Math.abs(clickCountClubs - 1 )  
+    }
+    console.log(clickCountClubs % totalClubsNum);
+    if (clickCountClubs % totalClubsNum == 0) {
+        $('.club').fadeOut(500) 
+        $('#club1').delay(500).fadeIn(500)
+    } else if (clickCountClubs % totalClubsNum == 1) {
+        $('.club').fadeOut(500)
+        $('#club2').delay(500).fadeIn(500)
+    } else if (clickCountClubs % totalClubsNum == 2) {
+        $('.club').fadeOut(500)
+        $('#club3').delay(500).fadeIn(500)
+    } else if (clickCountClubs % totalClubsNum == 3) {
+        $('.club').fadeOut(500)
+        $('#club4').delay(500).fadeIn(500)
+    };
+
+    $("#clubnum").text(clickCountClubs % totalClubsNum + 1); // update the pager
+});
+
+//clicking on right arrow in clubs page
+$("#rightarrowclub").on("click", function () {
+    clickCountClubs ++;
+    console.log(clickCountClubs % totalClubsNum);
+    if (clickCountClubs % totalClubsNum == 0) {
+        $('.club').fadeOut(500)
+        $('#club1').delay(500).fadeIn(500)
+    } else if (clickCountClubs % totalClubsNum == 1) {
+        $('.club').fadeOut(500)
+        $('#club2').delay(500).fadeIn(500)
+    } else if (clickCountClubs % totalClubsNum == 2) {
+        $('.club').fadeOut(500)
+        $('#club3').delay(500).fadeIn(500)
+    } else if (clickCountClubs % totalClubsNum == 3) {
+        $('.club').fadeOut(500)
+        $('#club4').delay(500).fadeIn(500)
+    }
+    $("#clubnum").text(clickCountClubs % totalClubsNum + 1);
+});
+
+
+// clubs arrow click to change slideshow
+$(document).ready(function() {
+    var slideshow;
+    slideshow = $('#slideshowClubs').wipe();
+    slideshow.pause();
+
+    $('#leftarrowclub').click(function(event) {
+        event.preventDefault();
+        slideshow.prev();
+        slideshow.pause();
+        // alert("left");
+    });
+
+    $('#rightarrowclub').click(function(event) {
+        event.preventDefault();
+        slideshow.next();
+        slideshow.pause();
+        // alert("right ")
+    });
+});

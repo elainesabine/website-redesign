@@ -60,7 +60,8 @@ p {
 }
 
 
-.navbutton:hover, #leftarrowproject, #rightarrowproject {
+.navbutton:hover, #leftarrowproject, #rightarrowproject, 
+#leftarrowclub, #rightarrowclub{
     cursor: pointer;
    }
 
@@ -253,7 +254,7 @@ a {
     display: none;
 }
 
-#projectscontainer {
+#projectscontainer, #clubscontainer {
     padding: 20px;
     height: fit-content;
 }
@@ -268,12 +269,19 @@ a {
     display: none;
 }
 
-.project {
-    background: #ed6772;
-    position: absolute;
+.project, .club {
     height: fit-content;
     padding-right: 20px;
     padding-bottom: 20px;
+    overflow: auto;
+}
+
+.project {
+    background: #ed6772;
+}
+
+.club {
+    background: #8ac8dc;
 }
 
 
@@ -322,7 +330,7 @@ a {
 
 
 #clubsTop {
-    background: black;
+    background: #ed6772;
     display: none;
 }
 
@@ -330,6 +338,7 @@ a {
 #clubsBottom {
     background: #8ac8dc;
     display: none;
+    /* color: black; */
 }
 /* 
 
@@ -416,6 +425,17 @@ a {
         display: block;
     }
     
+    #namewrapper {
+        display: inline-block;
+        /* background: blue; */
+        position: relative;
+    }
+
+    #socialmediadiv {
+        display: inline-block;
+        /* background: yellow; */
+        position: relative;
+    }
 
   }
 
